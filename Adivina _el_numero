@@ -1,0 +1,23 @@
+import random
+
+secreto = random.randint(1, 20)
+intentos = 5
+
+print("Adivina el número entre 1 y 20. Tienes 5 intentos.")
+
+while intentos > 0:
+    numero = int(input("Ingresa un número: "))
+
+    if numero == secreto:
+        print("¡Correcto! Ese era el número.")
+        break
+    elif numero < secreto:
+        print("El número secreto es mayor.")
+    else:
+        print("El número secreto es menor.")
+
+    intentos = intentos - 1
+    print("Te quedan", intentos, "intentos.")
+
+if intentos == 0:
+    print("Perdiste. El número era", secreto)
