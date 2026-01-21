@@ -1,0 +1,27 @@
+@bot.command()
+async def reciclar(ctx, *, objeto: str):
+    objeto = objeto.lower()
+
+    if objeto in reciclables:
+        await ctx.send(
+            f"♻️ **{objeto}** es reciclable.\n"
+            "Llévalo al contenedor correspondiente."
+        )
+
+    elif objeto in organicos:
+        await ctx.send(
+            f"🌱 **{objeto}** es orgánico.\n"
+            "Puede usarse para compostaje u otro uso natural."
+        )
+
+    elif objeto in no_reciclables:
+        await ctx.send(
+            f"🗑️ **{objeto}** no es reciclable.\n"
+            "Debe tirarse a la basura normal."
+        )
+
+    else:
+        await ctx.send(
+            f"❓ No tengo información sobre **{objeto}**.\n"
+            "Prueba con un objeto más común."
+        )
